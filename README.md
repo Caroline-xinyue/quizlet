@@ -3,9 +3,6 @@ Superuser:
 Superuser username: padler
 Superuser password: 'phillips'
 
-mySQL username: lxzhang
-mySQL password: 'Katerini@xz96'
-
 Superuser can create quizzes by clicking the "Create Your Quizzes" button in the homepage. To add questions to the quiz, simply click on the quiz in Existing Quizzes and you will be linked to the page to create new questions. Similarly, click on the question to create choices. You may delete quizzes/questions/choices by clicking on the button "Delete Quizzes/Questions/Choices". This will bring you to the page where you can delete whichever quiz/question/choice you want to delete.
 
 Superuser can also take quizzes and check their quiz reports, which might be helpful for designing their quizzes for students.
