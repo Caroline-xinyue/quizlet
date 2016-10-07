@@ -1,0 +1,22 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<form action="/delete_quiz/" method="post">{% csrf_token %}
+	  <fieldset>
+	    <legend> Existing Quizzes </legend>
+		  <ol>
+		  {% for list in lists %}
+			<li>
+			{{ list.name }}
+			<button type="hidden" name="delete" class="button" value="{{ list.id }}">Delete this quiz</button>
+			</li>
+		  {% endfor %}
+		  </ol>
+		</fieldset>
+	</form>
+
+	<div id="button">
+	<a href="/create_quiz/" class="button">Back To Create Quizzes</button>
+	</a>
+	</div>
+{% endblock %}

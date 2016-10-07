@@ -1,0 +1,18 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<h1><strong>Hello {{name}}!</strong></h1>
+	<h1> Welcome to the Quiz System </h1>
+
+	{% if request.user.is_superuser %}
+    <div id="button">
+		<a href="/create_quiz/" class="button">Create Your Quizzes</a>
+		<a href="/users/report/" class="button">Check Users Quiz Reports</a>
+	</div>
+	{% endif %}
+
+	<div id="button">
+		<a href="/my/report/" class="button">Check Your Quiz Reports</a>
+		<a href="/quizzes/" class="button">Proceed To Your Quizzes</a>
+    </div>
+{% endblock %}

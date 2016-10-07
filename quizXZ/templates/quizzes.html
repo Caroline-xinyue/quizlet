@@ -1,0 +1,15 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<div id="quizzes">
+	  <h1> Lists of Quizzes you haven't taken </h1>
+	  <p>Click on the quiz whenever you are ready! Note that the quiz is timed and can be only taken once.</p>
+	  <ol>
+	  {% for quiz in quizzes %}
+	    <li>
+		<a href="{{quiz.id}}/questions/">{{ quiz.name }}</a>
+	    </li>
+	  {% endfor %}
+	  </ol>
+	</div>
+{% endblock %}

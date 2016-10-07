@@ -1,0 +1,17 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<div id=wraparound>
+		<h1>Below are the quiz results for {{user_name}}:</h1>
+		<br>
+		<h1 id=highlight>{{user_name}} got {{score}} out of {{total}} in {{quiz_name}}.</h1>
+	</div>
+	<div id="button">
+		<a href="/quizzes/" class="button">Back To Quizzes</a>
+		{% if request.user.is_superuser %}
+		<a href="/users/report/" class="button">Back To Reports</a>
+		{% else %}
+		<a href="/my/report/" class="button">Back To Reports</a>
+		{% endif %}
+	</div>
+{% endblock %}

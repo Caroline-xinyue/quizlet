@@ -1,0 +1,748 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+
+<meta name="copyright" content="2003">
+<meta name="author" content="Bradley Kjell">
+<meta name="email" content="kjell at ieee dot org">
+<meta name="robots" content="noindex,nofollow">
+
+<title>
+Quiz on Binary Addition and Two's Complement
+</title>
+
+<link rel="stylesheet" type="text/css" href="../QUIZstyle.css">
+
+<script type="text/javascript">
+function gradeQuiz( reportForm ) 
+{
+  var totalRight = 0;
+  
+  for ( var count=0; count < document.forms.length-1; count++ )
+  {
+    if ( document.forms[ count ].response.value == '' ) { alert("Question " + (count+1) + " has not been answered" ); return; }
+  }
+  
+  for ( var count=0; count < document.forms.length-1; count++ )
+  {
+    if ( document.forms[ count ].response.value == document.forms[ count ].answer.value  )
+    {
+      document.forms[ count ].correct.style.background = "#80FF80" ;
+      totalRight++ ;
+    }
+   else
+      document.forms[ count ].correct.style.background = "#FF8080" ;
+       
+    document.forms[ count ].correct.value=document.forms[ count ].answer.value 
+  }
+  reportForm.grade.value   = " " + totalRight
+  percent                  = (100*totalRight)/(document.forms.length-1)
+  reportForm.percent.value = " " + percent
+  if ( percent > 90 )
+    reportForm.letter.value = "A"
+  else if ( percent > 80 )
+    reportForm.letter.value = "B"
+  else if ( percent > 70 )
+    reportForm.letter.value = "C"
+  else if ( percent > 60 )
+    reportForm.letter.value = "D"
+  else
+    reportForm.letter.value = "hmm.."
+
+}
+</script>
+
+<style>
+table
+{
+  padding: 15px;
+}
+
+td
+{
+  padding: 5px;
+}
+</style>
+
+</head>
+<body>
+<p class="revisions">
+Created 06/13/03; revised 08/21/15
+</p>
+
+<hr>
+
+<h1 style="text-align:center">
+<img src="../quizPencil.gif" alt="Quiz">
+on Binary Addition and Two's Complement
+</h1>
+
+
+<p>
+<b>Instructions:</b> 
+For each question,
+choose the single best answer.
+Make your choice by clicking on its button.
+You can change your answers at any time.
+When the quiz is graded, 
+the correct answers will appear in the box after each question.
+</p>
+ 
+
+<hr>
+<form name="question1">
+<p>
+1.
+
+In the following one-bit wide
+addition, what are the result R 
+and the carry, C?
+</p>
+
+<pre>C0
+ 0
+ 1
+--
+ R
+</pre>
+
+<p></p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question1.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+C=0; R=0
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question1.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+C=0; R=1
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question1.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+C=1; R=0
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question1.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+C=1; R=1
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="B">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="B">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question2">
+<p>
+2.
+
+In the following one-bit wide
+addition, what are the result R 
+and the carry, C?
+</p>
+
+<pre>C1
+ 0
+ 1
+--
+ R
+</pre>
+
+<p></p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question2.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+C=0; R=0
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question2.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+C=0; R=1
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question2.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+C=1; R=0
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question2.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+C=1; R=1
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="C">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="C">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question3">
+<p>
+3.
+
+Which one of the following is done correctly?
+</p>
+
+
+<p></p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question3.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0100
+ 0110
+ 0101
+ ----
+ 1011
+</pre>
+
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question3.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0100
+ 0110
+ 0101
+ ----
+ 1111
+</pre>
+
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question3.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0110
+ 0110
+ 0101
+ ----
+ 1111
+</pre>
+
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question3.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0101
+ 0110
+ 0101
+ ----
+ 1001
+</pre>
+
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="A">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="A">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question4">
+<p>
+4.
+
+Which one of the following is done correctly?
+</p>
+
+
+<p></p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question4.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0100
+ 1110
+ 1001
+ ----
+ 1001
+</pre>
+
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question4.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0000
+ 1110
+ 1001
+ ----
+ 0111
+</pre>
+
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question4.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0111
+ 1110
+ 1001
+ ----
+ 1001
+</pre>
+
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question4.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">1000
+ 1110
+ 1001
+ ----
+ 0111
+</pre>
+
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="D">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="D">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question5">
+<p>
+5.
+
+Perform the following addition:
+</p>
+
+<pre>1100
+0101
+----
+
+</pre>
+
+
+<p></p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question5.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+0001 with a carry out of the left column of 1
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question5.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+0001 with a carry out of the left column of 0
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question5.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+1001 with a carry out of the left column of 1
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question5.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+1110 with a carry out of  the left column 1
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="A">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="A">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question6">
+<p>
+6.
+
+Here is a two's complement representation
+of an integer:
+</p>
+
+<pre>0011 1001
+</pre>
+
+<p>
+What is the  two's complement representation
+of the negation of the integer?
+
+</p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question6.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+1100 0110
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question6.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+1011 1001
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question6.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+1100 1110
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question6.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+1100 0111
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="D">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="D">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question7">
+<p>
+7.
+
+Here is a two's complement representation
+of an integer:
+</p>
+
+<pre>1100 0111
+</pre>
+
+<p>
+What is the  two's complement representation
+of the negation of the integer?
+
+</p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question7.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+1100 0110
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question7.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+0011 1001
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question7.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+0000 1110
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question7.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+0100 0111
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="B">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="B">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question8">
+<p>
+8.
+
+Here is a correctly performed addition:
+</p>
+
+<pre>1100
+ 0100
+ 1110
+ ----
+ 0010
+</pre>
+
+<p>
+What is true about overflow for this addition?
+
+
+</p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question8.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+If the operands are regarded as unsigned binary,
+then the result shows <b>no overflow</b>.<br>
+If the operands are regarded as  two's complement binary,
+then the result shows <b>no overflow</b>.
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question8.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+If the operands are regarded as unsigned binary,
+then the result shows <b>overflow</b>.<br>
+If the operands are regarded as  two's complement binary,
+then the result shows <b>no overflow</b>.
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question8.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+If the operands are regarded as unsigned binary,
+then the result shows <b>no overflow</b>.<br>
+If the operands are regarded as  two's complement binary,
+then the result shows <b>overflow</b>.
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question8.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+If the operands are regarded as unsigned binary,
+then the result shows <b>overflow</b>.<br>
+If the operands are regarded as  two's complement binary,
+then the result shows <b>overflow</b>.
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="B">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="B">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question9">
+<p>
+9.
+
+Here is a correctly performed addition:
+</p>
+
+<pre>1000
+ 1100
+ 1010
+ ----
+ 0110
+</pre>
+
+<p>
+What is true about overflow for this addition?
+
+
+</p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question9.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+If the operands are regarded as unsigned binary,
+then the result shows <b>no overflow</b>.<br>
+If the operands are regarded as  two's complement binary,
+then the result shows <b>no overflow</b>.
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question9.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+If the operands are regarded as unsigned binary,
+then the result shows <b>overflow</b>.<br>
+If the operands are regarded as  two's complement binary,
+then the result shows <b>no overflow</b>.
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question9.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+If the operands are regarded as unsigned binary,
+then the result shows <b>no overflow</b>.<br>
+If the operands are regarded as  two's complement binary,
+then the result shows <b>overflow</b>.
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question9.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+If the operands are regarded as unsigned binary,
+then the result shows <b>overflow</b>.<br>
+If the operands are regarded as  two's complement binary,
+then the result shows <b>overflow</b>.
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="D">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="D">
+</td></tr>
+</tbody></table>
+</form>
+
+<hr>
+<form name="question10">
+<p>
+10.
+
+Say that there are two operands represented using
+the two's complement method:
+</p>
+
+<pre>operand A = 0011 1010          operand B = 0110 1011
+</pre>
+
+<p>
+Which of the following 
+uses of the binary addition algorithm
+shows the problem <b><code>A - B</code></b>?
+
+
+</p>
+<table>
+<tbody><tr><td><input type="radio" name="questradio" value="" onclick="question10.response.value='A'">
+<b>A.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0011 1010
+0110 1011
+---------
+</pre>
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question10.response.value='B'">
+<b>B.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">1100 0110
+0110 1011
+---------
+</pre>
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question10.response.value='C'">
+<b>C.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">0011 1010
+1001 0101
+---------
+</pre>
+
+</td></tr>
+
+<tr><td><input type="radio" name="questradio" value="" onclick="question10.response.value='D'">
+<b>D.&nbsp;&nbsp;&nbsp;</b>
+ 
+<pre style="margin-left:1cm">1100 0101
+1001 0110
+---------
+</pre>
+
+</td></tr>
+
+<tr><td>
+<input type="hidden" name="answer" value="C">
+<input type="text" name="correct" value="  " size="5" style="background: rgb(128, 255, 128);">
+<input type="hidden" name="response" value="C">
+</td></tr>
+</tbody></table>
+</form>
+
+
+<hr>
+<form name="evaluateQuest">
+
+
+<p style="text-align:center">
+<input type="button" value="grade quiz" onclick="gradeQuiz(this.form)">
+</p>
+
+<p style="text-align:center">
+The number you got right:
+&nbsp;&nbsp;
+<input type="text" name="grade" size="5">
+&nbsp;&nbsp;
+Percent Correct:
+&nbsp;&nbsp;
+<input type="text" name="percent" size="5">
+&nbsp;&nbsp;
+Letter Grade:
+&nbsp;&nbsp;
+<input type="text" name="letter" size="5">
+</p>
+</form>
+
+<hr>
+<p style="text-align:center">
+<a href="../index.html#part1"><img src="../homeIcon.gif" alt="Click here"> </a>
+</p>
+
+<p>
+If you have returned here from another page,
+or have re-loaded this page, you will need to click again on
+each of your choices for the grading program to work correctly.
+You may want to press the SHIFT KEY while clicking to clear
+the old answers.
+</p>
+
+
+</body></html>

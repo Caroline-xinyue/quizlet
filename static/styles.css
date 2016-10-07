@@ -1,0 +1,84 @@
+body {
+    background: #e0ffff;
+    font-size: large;
+}
+nav {
+    font-size: large;
+}
+h1 {
+    margin: 20px 20px 20px 20px;
+    text-align: center;
+}
+form, #quizzes {
+    margin: 5% 5% 5% 5%;
+    padding: 3%;
+    background: #fffff0;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.2); 
+}
+table {
+    margin: 5% 5% 2% 0%;
+    width:100%;
+}
+table, th, td {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+thead{
+    font-weight: bold;
+    background: #c9dff0;
+}
+th, td {
+    text-align: center;
+    padding: 1%;
+}
+#button {
+    text-align: center;
+    padding: 1%;
+}
+.button {
+    background-color: #66b3ff; 
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 0px;
+    cursor: pointer;
+}
+form p {
+    margin: 2% 5% 2% 5%;
+    padding: 3%;
+    background: #fff0f5;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.2); 
+}
+form li:hover {
+    background: #e6e6fa;
+}
+li {
+    margin: 10px 0px 0px 0px;
+    list-style-type: none;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #809fff;
+}
+nav li {
+    margin: 0px 0px 0px 0px;
+    float: left;
+}
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav li a:hover {
+    background-color: #80bfff;
+}

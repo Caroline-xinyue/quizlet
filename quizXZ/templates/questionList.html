@@ -1,0 +1,23 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<form action="/{{quizID}}/delete_question/" method="post">{% csrf_token %}
+	  <fieldset>
+	    <legend> Existing Questions </legend>
+		  <ol>
+		  {% for list in lists %}
+		      	{% if quizID == list.quiz.id %}
+				<li>
+				{{ list.text }}
+				<button type="hidden" name="delete" class="button" value="{{ list.id }}">Delete this question</button>
+				</li>
+		      	{% endif %}
+		  {% endfor %}
+		  </ol>
+		</fieldset>
+	</form>
+
+	<div id="button">
+	<a href="/{{quizID}}/create_question/" class="button">Back To Create Questions</a>
+	</div>
+{% endblock %}

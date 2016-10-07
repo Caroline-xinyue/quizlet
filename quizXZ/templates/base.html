@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- base.html -->
+<html>
+  <head>
+    <base href = "http://xzhang.master.cs.haverford.edu" />
+    <title>{{title}}</title>
+    <link href = "/static/styles.css" rel = "stylesheet" type = "text/css" />
+    <script>
+      {% block script %}{% endblock %}
+    </script>
+  </head>
+  <body>
+    {% block nav %}{% endblock %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

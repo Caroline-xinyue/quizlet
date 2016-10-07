@@ -1,0 +1,34 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<h1><strong>Create a Question</strong></h1>
+	<form action="/{{quizID}}/add_question/" method="post">{% csrf_token %}
+		<fieldset>
+		  <legend>Create A New Question for "{{quiz_name}}"</legend>
+		  {{ form.as_ul }}
+		  <input type="submit" class="button" value="Save this Question">
+		</fieldset>
+	</form>
+
+	<form action="/{{quizID}}/question_list/" method="get">{% csrf_token %}
+
+		<fieldset>
+		  <legend> Existing Questions </legend>
+
+		<ol>
+		  {% for list in lists %}
+			{% if quizID == list.quiz.id %}
+				<li>
+				    <a href = "/{{quizID}}/{{list.id}}/create_choice/">{{ list.text }}</a>
+				</li>
+		      	{% endif %}
+		  {% endfor %}
+		  </ol>
+		<input type="submit" class="button" value="Delete Questions">
+		</fieldset>
+	</form>
+
+	<div id="button">
+	<a href = "/create_quiz/" class="button">Back To Create Quizzes</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<h1><strong>Please answer the following questions to your best: Best Of Luck!</strong></h1>
+	<form action="/{{quiz.id}}/save_userchoice/" method="post"> {% csrf_token %}
+	<fieldset>
+	    {{error}}
+		<legend>Below are your quiz questions</legend>
+		{% for question in quiz.question_set.all %}
+		<p><label>{{question.text}}</label></p>
+		{% for choice in question.choice_set.all %}
+		&nbsp;&nbsp;<input type="checkbox" name="userchoice" id="choice" value="{{choice.id}}"></input>
+		<label class="radioandcheckbox">{{choice.text}}</label>
+		<br>
+		{% endfor %}
+		<br>
+		{% endfor %}
+	</fieldset>
+	<br>
+	<input type="submit" id="Submit" class="button" name="Submit" value = "Submit">
+	</form>
+{% endblock %}

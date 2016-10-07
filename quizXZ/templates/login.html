@@ -1,0 +1,22 @@
+{% extends "nav1.html" %}
+
+{% block content %}
+<h1><strong>Welcome to the Quiz System</strong></h1>
+<form action="/submitLogin/" method="post">{% csrf_token %}
+  <fieldset>
+    <legend>Please log in</legend>
+    {% if error %}
+    <p> {{error}} </p>
+    {% else %}
+    <p>Enter your username and password</p>
+    {% endif %}
+    <ul>
+      {{ form.as_ul}}
+    </ul>
+    <div id="button">
+    	<input type="submit" name="login" class="button" value="Log in">
+    </div>
+  </fieldset>
+</form>
+<br>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<div id="quizzes">
+	  	<h1> Quiz Report For All Users </h1>
+	  	<table>
+	  		<thead>
+	  		<tr>
+	  			<th>Quiz Name</th>
+	  	    	<th>User Name</th>
+	  	    	<th>Score</th>
+	  	    </tr>
+	  	    </thead>
+	  	   	{% for quizname, username, score, total in reports %}
+	  	   		<tr>
+	    			<td> {{quizname}} </td>
+		  			<td> {{username }} </td>
+		  			<td> {{score}} / {{total}} </td>
+		  		</tr>
+	    	{% endfor %}
+	  	</table>
+	</div>
+	<div id="button">
+	<a href="/my/" class="button">Back To Homepage</a>
+	</div>
+{% endblock %}

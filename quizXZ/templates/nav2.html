@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block nav %}
+<nav>
+	<ul>
+		<li><a>Welcome {{user.username}}:</a></li>
+  		<li><a href="/my"> Home</a></li>
+		<li><a href="/submitLogout">Logout</a></li>
+	</ul>
+</nav>
+{% endblock %}

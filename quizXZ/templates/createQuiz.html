@@ -1,0 +1,28 @@
+{% extends "nav2.html" %}
+
+{% block content %}
+	<h1><strong>Create a Quiz</strong></h1>
+	<form action="/add_quiz/" method="post">{% csrf_token %}
+		<fieldset>
+			<legend>Create A New Quiz</legend>
+			{{ form.as_ul }}
+			<input type="submit" class="button" value="Save this quiz">
+		</fieldset>
+	</form>
+	
+	<form action="/quiz_list/" method="get">{% csrf_token %}
+
+		<fieldset>
+		  <legend> Existing quizzes </legend>
+
+		<ol>
+		  {% for list in lists %}
+			<li>
+			   <a href = "/{{list.id}}/create_question/">{{ list.name }}</a>
+			</li>
+		  {% endfor %}
+		</ol>
+		<input type="submit" class="button" value="Delete Quizzes">
+		</fieldset>
+	</form>
+{% endblock %}
